@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+   <div class="contain">
+    <form action="{{ path('add_shop') }}" method="post">
+        <label for="Nom du produit">Nom du Magasin</label>
+        <input type="text" name="shopname" id="nom" placeholder="Nom du Magasin" class="form-control">
+        
+           <label for="Adresse du magasin">Adresse du magasin</label>
+           <input type="text" name="shopadresse" id="adresse" placeholder="Adresse du magasin" class="form-control">
+
+           <label for="product type">Type de poduit de ce magasin</label>
+           <input type="text" name="shoptype" id="type" placeholder="Type de produit" class="form-control">
+
+           <label for="Téléphone du magasin">Téléphone du magasin</label>
+           <input type="text" name="shopphone" id="telephone" placeholder="Téléphone du magasin(Ex:00235...)" class="form-control">
+           
+           <label for="Ville du magasin">Ville du magasin</label>
+           <input type="text" name="shopcity" id="ville" placeholder="Ville du magasin" class="form-control">
+       
+           <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+   </div>
+</html>
+

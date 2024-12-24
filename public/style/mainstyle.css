@@ -1,0 +1,5 @@
+
+.main-section
+{ height:250px;
+  background-image: linear-gradient(to bottom,rgb(13, 133, 73),rgba(18, 110, 171, 0.234)), url('../images/loginback.jpg');
+}

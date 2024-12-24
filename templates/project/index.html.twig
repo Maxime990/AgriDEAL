@@ -1,0 +1,375 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes affaires{% endblock %}
+
+{% block body %}
+<style>
+    .main-container { margin:10px auto; max-width:1200px; width: 95%; font: 18px/1.5 sans-serif; }
+    .main-container code { background: #F5F5F5; padding: 2px 6px; }
+
+    *{ 
+      font-family:'pt sans';
+    --blue:#055488;
+    --white:#fff;
+    --grey:#f5f5f5;
+    --black1:#222;
+    --black2:#999;
+    --main:#5b8c51;
+    }
+
+    .head-title
+    {
+      background-image: linear-gradient(to right, rgba(15, 32, 39, 0.39), rgba(91, 140, 81, 0.5), var(--main)), url('../images/graine.jpg');  
+      height: 350px;
+      width: 100%;
+      background-size: contain;
+     }
+     .main-container .header-container
+     {
+      width: 100%;
+     }
+
+     .main-container .header-container .element
+     {
+      margin: 0 auto;
+     }
+     
+     .main-container .header-container .element h2
+     {
+      font-size: 25px;
+      font-weight:800;
+      text-align:center;
+     }
+
+     .main-container .header-container .element span
+     {
+      text-align: center;
+     }
+
+     .main-container .header-container .search-container
+     {
+       width: 100%;
+       display:flex; 
+     }
+
+     .main-container .header-container .search-container .left-search
+     {
+       width:30%;
+       height:100vh;
+       background:#ECF0F1
+     }
+     
+     .main-container .header-container .search-container .left-search
+     h5
+     {
+       margin: 10px;
+       font-size:22px;
+       font-weight:bold;
+       color:#5D6D7E
+     }
+
+     .main-container .header-container .search-container .left-search
+     h3
+     {
+       margin: 10px;
+       font-size:15px;
+      }
+
+     .main-container .header-container .search-container .left-search 
+     form .align 
+     {
+       display:flex;
+       align-items:center;
+      }
+
+      .main-container .header-container .search-container .left-search 
+      form label 
+      {
+       font-weight:normal;   
+       font-size:15px;
+       margin:0 10px;
+      }
+      
+     .main-container .header-container .search-container .left-search 
+     form .align #min 
+     {
+       width:140px
+     }
+     .main-container .header-container .search-container .left-search 
+     form .align #max
+     {
+       width:140px;
+     }
+
+     .main-container .header-container .search-container .left-search 
+     form .btn.btn-primary
+     {
+       width:140px;
+       margin:10px;
+     }
+
+     .main-container .header-container .search-container .left-search
+     .title-filter
+     {
+      display:flex;
+      align-items:center;
+      margin:10px;
+     }
+
+     .main-container .header-container .search-container .left-search
+     .title-filter i 
+     {
+      font-size:12px;
+      margin-top:5px;
+     }
+
+
+     .main-container .header-container .search-container .left-search .col
+     .price-filter
+     {
+      display:flex;
+      align-items:center;
+     }
+
+     .main-container .header-container .search-container .left-search .col
+     a
+      {
+        margin:10px;
+        text-decoration:none;
+        color:white;
+        font-size:15px;
+        background:var(--main);
+        border-radius:5px;
+        padding:6px;
+      }
+
+     
+
+
+     .main-container .header-container .search-container .left-search
+     input
+     {
+       width: 300px;
+       margin: 10px;
+     }
+
+
+     .main-container .header-container .search-container .left-search
+     select
+     {
+       width: 300px;
+       margin: 10px;
+     }
+
+
+     .main-container .header-container .search-container .right-search
+     {
+       width:70%;
+       height:auto;
+       margin-left: 10px;
+       background:var(--degrade)
+     }
+     .main-container .header-container .search-container .right-search
+     .produit-place a
+     {
+       width:220px;
+       box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+       text-decoration:none;
+       background:white
+     }
+
+     .main-container .header-container .search-container .right-search
+     .produit-place a img
+     {
+       width:220px;
+       height:160px;
+     }
+
+
+      .main-container .header-container .search-container .right-search
+      .produit-place
+      {
+         display:grid;
+         grid-template-columns: 1fr 1fr 1fr;
+         gap:10px;
+         padding:15px;
+       }
+
+       .main-container .header-container .search-container .right-search
+       .produit-place .contenue
+       {
+          padding:10px;
+         }
+ 
+
+      .produit-place .contenue h3
+      {
+        font-size:26px;
+        color:black;
+       }
+
+       .produit-place .contenue p
+       {
+         font-size:14px;
+         font-weight:bold;
+         color:black;
+        }
+
+      .produit-place .contenue h4
+      {
+        font-size:14px;
+        color:black;
+        -webkit-line-clamp:2;
+        -webkit-box-orient:vertical;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        display:-webkit-box;
+      }
+
+      .produit-place .contenue h5 
+      {
+        font-size:14px;
+        color:#0E6655;
+        margin-top:5px;
+       }
+
+  @media screen and (max-width: 600px)
+  {
+    .main-container .header-container .search-container
+    {
+      flex-direction: column;
+    }
+
+    .main-container .header-container .search-container .left-search
+    {
+      width:100%;
+      height:auto;
+      margin-bottom: 10px;
+    }
+
+    .main-container .header-container .search-container .right-search
+    {
+      
+      width:100%;
+      height:auto;
+      margin-left: 10px;
+      background:var(--degrade)
+    }
+
+    .main-container .header-container .search-container .right-search
+    .produit-place a
+    {
+      width:220px;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+      text-decoration:none;
+    }
+
+    .main-container .header-container .search-container .right-search
+    .produit-place a img
+    {
+      width:220px;
+      height:160px;
+    }
+    
+    .main-container .header-container .search-container .left-search
+    input
+    {
+      width:auto;
+      margin: 10px;
+    }
+  
+
+     .main-container .header-container .search-container .right-search
+     .produit-place
+     {
+        display:grid;
+        grid-template-columns: 1fr;
+        padding:15px;
+        flex-direction: column;
+      }
+
+  .main-container .header-container .search-container .right-search
+  .produit-place a
+  {
+    width:100%;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    text-decoration:none;
+    cursor:pointer;
+   }
+ 
+  .main-container .header-container .search-container .right-search
+  .produit-place a img
+  {
+    width:100%;
+    height:180px;
+  }
+  }
+  
+</style>
+  <div class="head-title">  
+
+  </div>
+
+<div class="main-container">
+
+  <div class="header-container">
+    <div class="element">
+      <h2>On vous aide à trouver plus facilement des produits</h2>
+       <span><p>Recherchez les vendeurs agricoles qui ont fait la connaissance de la plateforme. <br> Nous travaillons avec toutes le monde pour offrire le meilleur service</p></span>
+      <hr style="width:60%;background:var(--main);height:3px; margin:8px auto;">
+       </div>
+  
+    <div class="search-container">
+        <div class="left-search">
+          <h5>Affinez votre recherche</h5>
+          <div class="title-filter">
+            <i class="fi fi-rr-map-marker"></i>
+            <h3>Votre localisation actuelle</h3>
+          </div>
+          
+       <form action="{{path('search')}}" method="POST">
+        {{ form_start(form)}}
+
+        {{ form_label(form.locationUser, 'Votre adresse de localisation *')}}
+        {{ form_row(form.locationUser,{'label': false,'id':'location-id'}) }}
+
+        {{ form_label(form.city, 'Votre ville *')}}
+        {{form_row(form.city,{'label': false}) }}
+
+        {{ form_label(form.categorie, 'Catégories *')}}
+        {{ form_row(form.categorie,{'label': false}) }}  
+        
+        <div class="align">
+           {{ form_row(form.minPrice,{'label': false,'class':'form-control','id':'min'}) }}
+           {{ form_row(form.maxPrice,{'label': false,'class':'form-control','id':'max'}) }}
+        </div>
+        {{ form_end(form) }}
+           </form>
+           
+          </div>
+
+        <div class="right-search">
+
+          <div class="produit-place">
+            {% for magasin in shop %} 
+              <a href="{{ path('product_details', {'id': magasin.id}) }}" class="product-detail">
+                  <div class="img">
+                    {# <img src={{asset('uploads/images/'~ produit.picture )}} > #}
+                  </div>
+                  <div class="contenue">
+                    <h3>{{magasin.name}}</h3>
+                    <h5>{{magasin.address}}</h5>
+
+                    {# <h5>Unité de vente: {{magasin.measure}} </h5> #}
+                    {# <p>Prix / unité: {{produit.price | number_format(0, ',', ' ')}} FCFA</p> #}
+                    {# <h4>{{magasin.description | raw}}</h4> #}
+                  </div>
+               </a>
+            {% endfor %}
+          </div>
+        </div>
+    </div>
+  </div>
+     
+ </div>
+{% endblock %}

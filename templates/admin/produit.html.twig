@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="" method="post">
+            <label for="Nom du produit">Nom du produit</label>
+            <input type="text" name="name" id="nom" placeholder="Nom du produit" class="form-control">
+            
+            <label for="Prix du produit">Prix du produit</label>
+            <input type="text" name="prix" id="prix" placeholder="Prix du produit" class="form-control">
+            
+            <label for="Catégorie du produit">Catégorie du produit</label>
+            <select name="categorie" id="" class="form-control">
+                {% for data in categorie %}
+                    <option value="{{ data.id }}">{{ data.titre }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="Description du produit">Description du produit</label>
+            <input type="text" name="description" id="description" placeholder="Description du produit" class="form-control">
+
+            <label for="Quantité du produit"> Quantité du produit</label>
+            <input type="text" name="quantite" id="quantite" placeholder="Quantité du produit (Tonne/Kilogramme)" class="form-control">
+            
+             <button type="submit" class="btn btn-primary">Ajouter</button>
+
+        </form>
+    </body>
+</html>

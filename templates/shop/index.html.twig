@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page de commande{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+    *{ 
+      font-family:'pt sans';
+    --blue:#055488;
+    --white:#fff;
+    --grey:#f5f5f5;
+    --black1:#222;
+    --black2:#999;
+    --main:#5b8c51;
+    }
+
+    .formular-section-order .row .col textarea
+    {
+      height: 150px;
+    }
+
+    .formular-section-order .row .col button
+    {
+      background: var(--main);
+      border:none;
+    }
+
+    .section-order 
+    {
+      background-image: linear-gradient(to right, rgba(15, 32, 39, 0.39), rgba(91, 140, 81, 0.5), var(--main)), url('../images/cereales.jpg');  
+      height: 300px;
+    }
+
+ 
+</style>
+
+    <section class="section-order"></section>
+
+    <div class="section-body">
+        <h2>Aller à la rencontre de vos agriculteurs</h2>
+        <p>Les points de vente qui ont fait la connaissance de la plateforme</p>
+         {% for city in ville %}
+          <h1 style="padding: 2rem;">La ville: {{ city }}</h1>
+         {% endfor %}
+    </div>
+  
+ 
+{% endblock %}

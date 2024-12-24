@@ -1,0 +1,204 @@
+    {% block body %}
+    <style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+     section .conteneur
+     {
+      width:100%;
+     }
+     *{ 
+      font-family:'pt sans';
+    --blue:#055488;
+    --white:#fff;
+    --grey:#f5f5f5;
+    --black1:#222;
+    --black2:#999;
+    --main:#5b8c51;
+    }
+
+  #detailModal
+  {
+    width:100%;
+    height:100%;
+    left:0;
+    right:0;
+    background-color:rgba(91, 140, 81, 0.5);
+    position:relative;
+    
+   }
+
+   @keyframes fadeIn {
+    0%{
+      display:none;
+      opacity:0;
+    }
+    100%{
+      display:block;
+      opacity:1;
+    }
+   }
+  #detailModal .content
+  {
+    width:70%;
+    height:550px;
+    background-color: white;
+    position:fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    }
+
+    #detailModal .content #send 
+    {
+      padding:10px;
+      font-size:1.4rem;
+      text-decoration:none;
+      color:white;
+      border-radius:5px;
+      background-color:var(--main);
+      transition:all 0.3s ease;
+      margin:1.5rem 0 ;
+      width:100%;
+    }
+
+    #detailModal .content .align-item
+    {
+       display:flex;
+    }
+
+    #detailModal .content .align-item .left
+    {
+       width:80%;
+       height:100%;
+       padding:0;
+       margin:0;
+    }
+
+    #detailModal .content .align-item .left img
+    {
+       width:100%;
+       height:320px;
+       border-radius:10px
+    }
+
+    #detailModal .content .align-item .right
+    {
+       width:60%;
+       height:350px;
+       padding:1rem;
+       margin-left: 10px;
+       bottom:0;
+      }
+
+      #detailModal .content .align-item .right textarea
+      {
+        height:100px;
+      }
+
+    #detailModal .content .align-item .right h2
+    {
+      color:var(--main);
+      font-weight:bold;  
+    }
+    #detailModal .content .align-item .right .col .stock 
+    {
+       display:flex;
+       align-item:center
+     }
+
+     #detailModal .content .align-item .right .col .information p::before
+     {
+      content:url('../icones/exclamation.svg');
+      margin-right:10px;
+      color:red;
+      align-item:center
+     }
+ 
+
+     #detailModal .content .align-item .right .col h6 
+     {
+      color:var(--main);
+      font-size:14;
+     }
+
+     #measure 
+     {
+      margin-left:5px;
+      
+     }
+
+    </style>  {% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+     <link rel="stylesheet" href="style/servicedesign.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {% endblock %}
+ 
+     <section class="body">
+
+          <div class="conteneur">
+
+            <div id="detailModal">
+              <div class="content">
+                <a class="close" href="{{url('project')}}">&times;</a>
+                 <div class="align-item" style="position:relative;">
+                   <div class="left">
+                    <img src="{{asset('uploads/images/'~ product.picture)}}" alt="">
+                   </div>
+                   <div class="right">
+                    <div class="col">
+                      <h2>{{product.productName}}</h2>
+                      <p>{{product.description | raw}}</p>
+                      <div class="stock">
+                        <h4>Stock: {{product.quantity }}</h4> 
+                        <h4 id="measure">Sacs</h4>
+                      </div>
+
+                      <div class="stock">
+                        <h4>Mesure: {{product.measure }}</h4> 
+                         
+                      </div>
+                      <h6>Prix / unité de vente du marché: {{product.price | number_format(0, ',', ' ')}} FCFA</h6>
+                      <div class="information">
+                         <p>La quantité voulu est estimée en unité de vente du produit sur le marché</p>
+                      </div>
+                      <label for="qtity">Quantité</label>
+                      <input class="form-control" type="number" min="1" value="1" name="quantity" id="quantity" placeholder="1">
+                      </div>
+                      <label for="message">Laisser un message</label>
+                      <textarea class="form-control" name="message" id="note" cols="30" rows="10" placeholder="Laissez un message..."></textarea>
+                   </div>
+                 </div>
+                 <a id="send" href="">Obtenez un DEVIS</a>
+              </div>   
+           </div>
+          </div>
+
+     </section>
+    
+    {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    {% endblock %}
+
+     {% block scripts %}
+      <script>
+        let detailModal = document.getElementById('detailModal');
+        let close = document.querySelector('.close');
+        detailModal.style.display = 'block';
+        detailModal.style.animation = 'fadeIn 2s ease forwards';
+        detailModal.style.transition = 'all 1s ease';
+        close.addEventListener('click', function(){
+            close.classList.toggle('active');
+            detailModal.style.animation = 'fadeOut 2s ease forwards';
+         })     
+       </script>
+     <script src="https://kit.fontawesome.com/0c59b1f578.js" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>   
+     <script src="hzttps://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     {% endblock %}
+{% endblock %}

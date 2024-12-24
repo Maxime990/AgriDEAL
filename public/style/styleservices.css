@@ -1,0 +1,237 @@
+    html
+    {
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+    }
+
+    :root{
+    --green:#0830613b;
+    --white:#fff;
+    --black1:#222;
+    --black2:#999;
+    --blue:#074580;
+    --grey:#566573;
+    --blue:#273746;
+    --brown:#E74C3C;
+    --main:rgb(0, 150, 136);
+    }
+
+
+    .project-back
+    {  
+    align-items: center;
+    background-image: linear-gradient(to bottom,rgb(0, 150, 136), #076aa800), url("../images/backproject.png");
+    height:auto;
+    padding:20px;
+    }
+    .project-back .row .col h5
+    {
+      color:#fff;
+    }
+
+    .project-back .col p
+    { 
+    font-family:-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif; 
+    font-size:33px;
+    font-weight:800; 
+    color:#fff;
+    margin-right: 25%;
+    padding: 10px;
+
+    }
+    .project-back .col h5
+    {
+    margin-right: 40%;
+    line-height:2;
+    padding: 5px;
+    padding: 10px;
+    font-family: 'pt sans';
+    font-weight: 700;
+    font-size: 1.8rem;
+    color:rgba(45, 41, 41, 0.666);
+    width: 530px;
+    }
+
+    .project-back .section-st
+    {
+      background:rgba(255, 255, 255, 0.255);
+      border-radius: 10px;
+      width:50%;
+      height: auto;
+    }
+
+    .section-st .col h6
+    {
+      padding: 10px;
+      margin: 10px;
+      font-size: 17px;
+      color: rgb(63, 63, 63);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .section-st .col i
+    {
+      padding: 10px;
+      color: rgb(63, 63, 63);
+    }
+
+    .section-street
+    {
+      background:#fff;
+      padding: 12px 12px;
+      display: inline-block;
+    }
+
+    .section-grid
+    {
+      background:#fff;
+      padding: 12px 12px;
+      display: inline-block;
+    }
+
+    .section-street .section-sth
+    {
+      background:rgb(255, 255, 255);
+      border-radius: 8px;
+      width:auto;   
+      height:50%;
+      padding: 5px 5px;
+      margin: 5px 5px;
+      box-shadow: rgba(18, 80, 119, 0.2) 0px 7px 29px 0px;
+    }
+    .section-street .row .section-sth:hover
+    {
+    box-shadow: rgba(1, 37, 66, 0.178) 0px 19px 38px, rgba(3, 18, 30, 0.207) 0px 15px 12px;
+    }
+
+    .section-street .section-sth .col h6
+    {
+      padding: 13px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height:1.8;
+      font-family: 'pt Sans';
+    }
+
+    .section-street .section-sth .col button:hover
+    {
+      background:#E74C3C;
+      color:#fff;
+    }
+
+    .section-street .col .row .section-sth  .col p
+    {
+      padding: 4px;
+      line-height:1.8;
+      font-family: 'pt Sans';
+      font-size: 15px;
+    }
+
+    .section-street .section-sth .col h6 img
+    {
+      padding: 10px;
+      width: 70px;
+      height: 70px;     
+    }
+
+    .fad-img .row .section-push p
+    {
+      font-family: Muli,BlinkMacSystemFont,-apple-system,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Helvetica","Arial",sans-serif; 
+      font-size:30px; 
+       font-weight:800; 
+      margin-left: 5%;
+       text-align: center;
+     }
+
+    .fad-img .section-push .image-section
+    { 
+      box-shadow: rgba(18, 80, 119, 0.2) 0px 7px 29px 0px;
+      width: 400px;
+      height: 200px;
+      border-radius:9px;
+      background:rgb(236, 236, 236);
+    }
+
+    .section-street h3
+    {
+      margin-left:auto;
+      margin-right:auto;
+      width: 260px;
+      color: rgb(30, 30, 30);
+      font-weight: 800;
+      font-size: 22px;
+      padding:10px;
+      font-family:-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+    }
+
+    .section-join-us
+    {
+      height: 413px;
+      background-image: url('../images/join.png');
+      }
+    
+    .section-join-us i
+    {
+      padding: 10px;
+      width:45px;
+      height:45px;
+    }
+
+    .section-join-us h2
+    {
+      padding: 10px;
+      font-weight: 800;
+      font-family:-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+      width: auto;
+      color: #fff;
+      display: inline-block;
+    }
+    .section-join-us .section-button button
+    {
+      width: 250px;
+      height:40px;
+      padding:5px;
+      margin: 20px;
+      font-size: 18px;
+      background:rgb(5, 64, 99);
+      border-radius:4px;
+      color:#fff;
+      font-family: 'pt sans';
+    }
+
+    .section-join-us .section-button button:hover
+    {
+      background:#fff;
+      border-radius:4px;
+      color:#000;
+      font-family: 'pt sans';
+    }
+
+    .section-join-us .section-button p
+    {
+      color: #fff;
+      margin: 20px;
+      font-size: 17px;
+      width: 50%;
+    }
+
+
+    .box-section-company
+    {
+      height:500px;
+      background-image: url('../images/entreprise.png');
+    }
+
+    .box-section-company p 
+    {
+      margin-left:auto;
+      margin-right:auto;
+      width: 140px;
+      color:#fff;
+      font-weight: 800;
+      font-size: 26px;
+      font-family:-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+    }
+
+    
+        

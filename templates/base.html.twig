@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %} Bienvenue {% endblock %}</title>
+
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+        {% block stylesheets %}
+          {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="style/stylecode.css">
+            <link rel="stylesheet" href="style/mobilestyle.css">
+            <link rel="stylesheet" href="style/section_menu.css">
+            <link rel="stylesheet" href="style/formular.css">
+            <link rel="stylesheet" href="style/delivery.css">
+            <link rel="stylesheet" href="style/launchproduct.css">
+            <link rel="stylesheet" href="style/blogstyle.css">
+            <link rel="stylesheet" href="style/mainstyle.css">
+            <link rel="stylesheet" href="style/boutique.css">
+            <link rel="stylesheet" href="style/orderstyle.css">
+            <link rel="stylesheet" href="style/styleservices.css">
+            <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+            <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+            <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+            <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-brands/css/uicons-brands.css'>
+            <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    <style>
+     body
+    {  margin: 0; font-family:'pt sans'}
+
+    *{ 
+      font-family:'pt sans';
+    --blue:#055488;
+    --white:#fff;
+    --grey:#f5f5f5;
+    --black1:#222;
+    --black2:#999;
+    --main:#5b8c51;
+    }
+  
+    .header {width:100%; height:100px; overflow:hidden; padding: 20px 10px; position: fixed;top: 0; right: 0; display: flex;justify-content: space-between; z-index: 10; color:#fff; }
+    
+    .header a { font-family:20px;text-align: center; padding: 12px; text-decoration: none;line-height:25px; color:#fff; }
+
+    .header .navbar a{ font-size:20px}
+
+    .header .navbar .logout-btn a { color:black;font-size:20px;}
+
+    .header .navbar .logout-btn-arrow a { color:#2C3E50; font-size:16px;}
+
+    .scrolling-active .header .logout-btn:hover { color: black; background:black;border-radius:18px; padding: 4px 12px;}
+
+    .scrolling-active .header .logout-btn a:hover { color:black;}
+
+    .scrolling-active .header .logout-btn-arrow:hover { color:black; }
+
+    .scrolling-active { background-color:var(--main); }
+
+    .header .logo
+    {
+      display:flex;
+      width:100px;
+    }
+
+    .header .menu
+    {
+      display:none;
+      width:50px;
+      height:50px;
+    }
+
+    .header .panel 
+     {
+      width:0;
+      display:none;
+     }     
+
+
+    .header .logo a
+    {
+       font-size:3rem;
+       font-weight:800;
+    }
+    
+    .header .logo img 
+    {
+      width:60px;
+      height:60px;
+     }
+ 
+    .header .navbar a:hover  { color: #c7c7c7; text-decoration: none; font-weight: 400; font-family: 'pt sans'; }
+    
+    .scrolling-active .login-btn:hover { background:white; margin: 8px; border-radius:13px; padding: 4px; }
+ 
+    .scrolling-active .header { background-color:white; }
+
+    .scrolling-active .header .logo a { color:#1B4F72; font-size:17px; }
+
+    .scrolling-active .header .navbar a  { color:rgb(5, 59, 83);  } 
+
+    .scrolling-active .header #open  { color:rgb(5, 59, 83);  } 
+
+    .scrolling-active .navbar #login { border : 1px solid rgb(5, 59, 83); }
+
+    .scrolling-active .navbar #signup {border : 1px solid rgb(5, 59, 83);}
+
+    .navbar #login { margin: 8px; border-radius:13px; padding: 4px; font-size:13px; border: 1px solid white; }
+
+    .navbar #signup { margin: 8px; border-radius:13px; padding: 4px; font-size: 13px; border: 1px solid white; }
+
+    
+    .header .navbar .login-btn { margin: 8px; border-radius:13px; padding: 4px;  }
+
+    .header .navbar .logout-btn { margin: 8px; border-radius:13px; color:white; padding:4px; }
+
+    .header .logout-btn-arrow  { margin: 8px;  border-radius:13px;  color:white;  padding:4px; }
+
+    .header .navbar .logout-btn a {color:white; font-size:17px;  }
+
+    .header .navbar .logout-btn-arrow a  { color:white; font-size:17px;  }  
+ 
+    .header .navbar .logout-btn-arrow:hover  { background:var(--degrade); color:white; }
+
+    .header .navbar .logout-btn:hover  { background:var(--degrade);color:white; }
+    
+    .header .navbar .current-user-conncet  { align-items:center}
+
+    .header .navbar .current-user-conncet a { color:#fff; font-size: 12px; }
+
+    .scrolling-active .header .navbar .current-user-conncet a { color:var(--blue); font-size: 12px; }
+
+    .scrolling-active .header .navbar .current-user-conncet i  { color:var(--blue); width:12px; height:12px; }
+
+ 
+   footer .footer-container 
+    {
+        display:flex;
+        padding:3rem;
+        justify-content: space-between;
+        background-color:#5E7751;
+    }
+
+    footer .footer-container p
+    {
+         width:400px;
+        font-size:15px;
+        text-align:left;
+        color:white
+    }
+
+    footer .footer-container ul li 
+    {
+        list-style: none;
+        padding:10px;
+        font-size:17px;
+    }
+
+    footer .footer-container ul li a
+    {
+        text-decoration:none;
+        color:white
+    }
+
+    footer .footer-container .footer-logo p
+    {
+      font-size:16px;
+      line-height:1.8;
+    }
+
+    footer .footer-link 
+    {
+      display:flex;
+      justify-content:center;
+      background:#495D3F
+    }
+
+    footer .footer-link a
+    {
+      margin:10px;
+      font-size:2rem;
+      color:white
+    }
+
+
+    @media screen and (max-width:600px) {
+       ul li a .fi.fi-rr-cross
+      {
+        margin-left:70%;
+        font-size:12px;
+        padding:10px;
+       }
+
+       ul li a .fi.fi-rr-cross:hover
+       {
+         background:#D7DBDD;
+         cursor: pointer;
+       }
+
+
+       .header .menu
+       {
+         display:block;
+       }
+  
+      .header .panel 
+      {
+        width:0;
+        position:fixed;
+        top:0%;
+        right:0;
+        z-index:10;
+        border-bottom-right-radius:0;
+        border-top-right-radius:0;
+       }
+
+   
+       .header .panel.actived
+       {
+        display:block;
+        width:200px;
+        animation:open 0.5s;
+       }
+
+       @keyframes open {
+        0% {width:0;}
+        100% {width:200px;}
+       }
+  
+      .header .panel ul li
+      {
+         list-style: none;
+         margin:0;
+      }
+
+     
+  
+      .header .panel ul li a
+      {
+        color:black;
+        font-size:16px;
+      }
+       .header .panel ul li a:hover
+      {
+        color:black;
+      }
+  
+      .header .panel ul li .login,.signup,.logout 
+      {
+        font-size:14px;
+        font-weight:800;  
+        color:orangered  
+      }
+      .header .panel ul li .logout a{ color:var(--main)}
+      .header .panel .current-user a { font-size: 12px; color:var(--main)}
+  
+      .header .panel .current-user i  { color:var(--blue); width:12px; height:12px; }
+      
+   }
+     </style>
+        {% endblock %}
+    </head>
+    <body>
+ <nav>
+  <header> 
+   <div class="header">
+    <div class="panel">
+          <ul>
+            <li><span><a><i class="fi fi-rr-cross" id="close"></i></a></span></li>
+              <hr>
+            <li><span><a href="{{path('accueil')}}">Accueil</a></span></li>
+              <hr>
+            <li><span><a href="{{path('project')}}">Magasins</a></span></li>
+              <hr>
+            <li><span><a href="{{path('requests')}}">Le marché</a></span></li>
+              <hr>
+            {% if app.user is not null %}
+              <li><span class="logout"><a href="{{path('app_logout')}}">Déconnecter</a></span></li>
+                <hr>
+                  <li><span class="current-user"><a>{{ app.user.email }}</a></span></li>
+                <hr>
+            {% else %}
+              <li><span ><a href="{{path('app_login')}}" id="login">Se connecter</a></span></li>
+                <hr>
+              <li><span > <a href="{{path('create_user')}}" id="signup">S'inscrire</a></span></li>
+                <hr>
+            {% endif %}
+          </ul>
+       </div>
+   
+    <div class="logo"><img src="{{asset('icones/logos.svg')}}" alt=""><a>LaGraine</a></div>
+         <div class="navbar navbar-expand-lg navbar-light ms-light" id="navig">
+           <a href="{{path('accueil')}}">Accueil</a>
+              <a href="{{path('project')}}">Magasins</a>               
+                 <a href="{{path('requests')}}">Le marché</a>
+                {% if app.user %}
+                 <span class="current-user-conncet"> <a>{{ app.user.nom }}  {{ app.user.prenom }}</a></span>
+                 <span class="login-btn"><a href="{{path('app_logout')}}">Déconnecter</a></span>
+                {% else %}
+                <span > <a href="{{path('app_login')}}" id="login">Se connecter</a></span>
+                <span > <a href="{{path('create_user')}}" id="signup">S'inscrire</a></span>
+                {% endif %}
+            </div>
+          <a class="menu" id="open"><i class="fi fi-rr-menu-burger"></i></a>
+         </div>
+       </div> 
+     </header>
+    </nav>
+
+    {% block body %}
+
+
+    {% endblock %}
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <h1 style="color: white;">LaGraine</h1>
+          <p>LaGraine est une plateforme de mise en relation producteur agricole et consommateur qui offre plusieurs avantages aux consommateurs et aux producteurs. La plateforme est un choix judicieux pour les personnes 
+            qui souhaitent consommer des produits de qualité, issus de l'agriculture locale et durable.</p>
+        </div>
+
+        <div class="footer-links">
+          <ul>
+            <li><a href=" ">Commander</a> </li>
+            <li><a href=" ">Choisir un point de vente</a></li>
+            <li><a href=" ">Logistique & Livraison</a></li>
+            <li><a href=" ">Paiement</a></li>
+          </ul>
+        </div>
+
+
+        <div class="footer-links">
+          <ul>
+            <li><a href=" ">Mon compte</a></li>
+            <li><a href=" ">Contact</a></li>
+            <li><a href=" ">A propos</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-link">
+       <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a>
+      </div>
+     
+
+      <div class="footer-copyright text-center py-3" id="copyright-year"></div>
+    </footer>
+
+    {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    <script src="{{ asset('scriptFile/script.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>   
+    <script>
+
+      window.addEventListener('scroll', function() {
+          let header = document.querySelector('header');
+          let position = window.scrollY > 0;
+          header.classList.toggle('scrolling-active',position);
+      })
+      
+      var coll = document.getElementsByClassName('collapsible');
+      var i ;
+
+      for(i =0; i< coll.length; i++)
+      {
+        coll[i].addEventListener('click', function(){
+            this.classList.toggle('active');
+            var content = this.nextElementSibling;
+            if( content.style.display === 'block')
+            {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            };
+         });
+      }
+      //over css element icon using js
+      {# var select = document.getElementsByClassName('box-element');
+      select.addEventListener('mousemove', () =>
+      {
+        this.class.toggle('change-color');
+      }); #}
+     </script>
+
+     <script>
+       var next = document.getElementById('right');
+       var prev = document.getElementById('left');
+
+      next.onclick = function(){
+        var container = document.getElementById('box');
+        SlideFunction(container,'right',40,350,10);
+       } 
+
+       prev.onclick = function(){
+        var container = document.getElementById('box');
+        SlideFunction(container,'left',40,350,10);
+       }
+
+       function SlideFunction(element,direction,speed,distance,step)
+       {
+        scrollAmount = 0;
+        var slideTimer = setInterval(function(){
+            if(direction == 'left')
+            {
+                element.scrollLeft -= step;
+            }else
+            {
+                element.scrollLeft += step;
+            }
+            scrollAmount += step;
+            if(scrollAmount >= distance)
+            {
+                window.clearInterval(slideTimer);
+            }
+          },speed);
+       }
+
+     </script>
+     <script>
+
+      let close = document.getElementById('close');
+      let open = document.getElementById('open');
+      let container = document.querySelector('.panel');
+
+      open.addEventListener('click',()=>{
+        container.classList.toggle('actived');
+       });
+
+      close.addEventListener('click',() => {
+        container.classList.remove('actived');
+      })
+     </script>
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+     <script>
+      const barChart = document.getElementById('barChart');
+    
+      new Chart(barChart, {
+        type: 'bar',
+        data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [
+            {
+            label: 'Production semencière',
+             data: [3, 10, 3, 4, 2, 9],
+             backgroundColor: '#289A07',
+            },
+          {
+            label: 'Production partielle',
+             data: [10, 9, 12, 5, 11, 3],
+             backgroundColor: '#679B79',
+           },
+          {
+            label: 'Graine de coton',
+             data: [20, 9, 13, 5, 4, 3],
+             backgroundColor: '#2A7329',
+           }
+          ]
+        },
+        options: 
+        {
+          plugins:  {
+              legend: {
+               display: true,
+                labels: {
+                 },
+            },
+          }
+        }
+      });
+    </script>
+
+
+    <script>
+      const doughnut = document.getElementById('doughnut');
+    
+      new Chart(doughnut, {
+        type: 'doughnut',
+        data: {
+          labels: ['Sorgho', 'Césame', 'Maïs', 'Riz', 'Coton', 'Légume'],
+          datasets: [{
+            label: 'Produit agricole',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: ['#289A07', '#679B79', '#2A7329', '#0BA465', '#73A40B', '#BBC813'],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>     
+     <script>
+  document.getElementById("copyright-year").innerHTML = "© Copyright: LaGraine " + new Date().getFullYear();
+</script>
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script>AOS.init();</script>
+     <script src="https://kit.fontawesome.com/0c59b1f578.js" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    
+    {% endblock %}
+
+     {% block scripts %}
+        
+     {% endblock %}
+
+     </body>
+    
+ </html>

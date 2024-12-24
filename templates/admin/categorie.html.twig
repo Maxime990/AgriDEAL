@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="contain">
+            <form action="{{ path('add_category')}}" method="post">
+                <label for="Nom de la catégorie">Nom de la catégorie</label>
+                <input type="text" name="categorie" id="nom" placeholder="Nom de la catégorie" class="form-control">
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+            </form>
+        </div>
+    </body>
+
+</html>

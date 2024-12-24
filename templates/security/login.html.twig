@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+   
+{% block title %}Log in!{% endblock %}
+  
+
+{% block body %}
+    <head>
+        <style>
+        *{
+           --main:#5b8c51;  
+        }
+
+        .home 
+        {
+            background-image: linear-gradient(to right, rgba(15, 32, 39, 0.39), rgba(32, 58, 67, 0.5), #2c5364), url('../images/cereales.jpg'); 
+            background-size: contain;
+            height:50vh;
+        }
+
+        .form-login h1,p{ text-align: center; font-weight:800; color:#85929E; font-size:22px; }
+
+        .form-login form {
+            width:50%;
+            margin:3rem auto;
+            padding:2rem;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+        }
+
+ 
+        .form-login form label { color:#85929E; font-size:17px; font-weight:normal;}
+
+        .form-login form input { margin: 1rem auto;}
+
+        .form-login form .send-login {width:100%; padding:10px; font-size: 19px; margin: 1rem auto; color:white; background:var(--main) }
+
+        .form-login .imglogin   { text-align: center; display:flex; width:200px; margin:0 auto; }
+
+        .form-login .imglogin img { width:100px; height:100px; margin:0 auto; }
+
+        .form-login span  h2 { margin:0 auto; text-align:center; font-size:2.6rem;}
+        </style>
+    </head>
+    <section class="home" id="home">
+        <div class="content">
+    
+      </div>
+    </div>
+  </section>
+    <div class="form-login">
+
+        <div class="imglogin">
+            <img src="{{asset('icones/logos.svg')}}" alt="">
+            <h1>LaGraine</h1>
+        </div>
+
+        <span><h2>Bienvenue sur notre site ! Nous sommes ravis de vous voir.</h2></span>
+        <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="mb-3">
+                Vous êtes connecté en tant que: {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        {% endif %}
+
+        <h1 class="h3 mb-3 font-weight-normal">Connectez-vous et accedez au services</h1>
+        <label for="inputEmail">E-mail</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        <label for="inputPassword">Mot de passe</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+        <input type="hidden" name="_csrf_token"  value="{{ csrf_token('authenticate') }}">
+
+        <button class="send-login" type="submit">Se connecter</button>
+    </form>
+    </div>
+
+{% endblock %}

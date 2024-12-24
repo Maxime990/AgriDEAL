@@ -1,0 +1,165 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'PT Sans', sans-serif;
+            outline: none;
+            border: none;
+            text-transform: none;
+            transition: all 0.2s linear;
+            text-decoration: none;
+        }
+
+        :root
+        {
+        --white:#fff;
+        --grey:#f5f5f5;
+        --black1:#222;
+        --black2:#999;
+        --main:#009688FF;
+        --degrade:#c9c9c93b;
+        --overcolor:#4e4d4d;
+        }
+       
+        .delivery-shop-section .row .col h2
+        {
+            font-size: 46px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            line-height: 1.5;
+            font-weight: 800;
+            width: 80%;
+            color:white;
+            margin-top:90px;
+            margin-left: 40px;
+        }
+
+        .delivery-shop-section .row img
+        {
+            width: 25%;
+            height: 40%;
+            border-radius:8px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }
+
+    .delivery-section .row .livre-anything .row img
+    {
+        width: 50px;
+        height: 50px;
+    }
+    .delivery-section .row .livre-anything .row h6
+    {
+    line-height: 1.5;
+    font-family: 'pt sans';
+    font-size: 14px;
+    margin-left: 12px;
+    }
+
+
+    .delivery-section .row .livre-anything
+    {
+        width:300px;
+        height:200px;
+        background:#b7b7b737;
+        border-radius:5px;
+        align-items:center;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+
+    .delivery-section .row .livre-anything
+    {
+        padding:10px;
+    }
+
+    .delivery-section .row .livre-anything p
+    {
+        font-family: 'pt sans';
+        color:#494a4b;
+        font-weight: bolder;
+    }
+    .format
+    {
+        background:#73727c27;
+        margin:auto;
+    }
+    
+   .valide-delivery h5
+   {
+       font-size: 25px;
+       margin-left: 30%;
+       font-weight: bold;
+       text-align: center;
+       width: 40%;
+       font-family: 'PT Sans', sans-serif;
+    }
+    .livraison-section .row .expidition-section
+    { 
+       align-items:center;
+       margin-left: auto;
+       margin-right: auto;
+    }
+
+    .livraison-section .expidition-section h5
+    {
+        font-size: 25px;
+        margin-left: 30%;
+        text-align: center;
+        font-weight: bold;
+        width: 60%;
+        font-family: 'PT Sans', sans-serif;
+    }
+
+    .livraison-section .expidition-section p
+    {
+     text-align: center;
+     color:#2C3E50;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .livraison-section .row .expidition-section col .trait_sub
+    {
+        width: 100px;
+        height: 12px;
+        background:#27AE60;
+        border-radius:50px;
+    }
+   .valide-delivery .shadow-paragraph p
+   {
+    font-size: 18px;
+     width:60%;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     margin-left: 10px;
+    padding: 10px;
+    background:rgba(5, 42, 97, 0.14);
+    border-radius:8px;
+   }
+
+   .valide-delivery .shadow-paragraph .row-form 
+   {
+       width:70%;
+       margin-left:20px;
+       margin-right:20px;
+   }
+
+   .valide-delivery .shadow-paragraph .row-form label
+   {
+       font-family:'pt sans';
+       font-weight:normal;
+     }
+
+     .valide-delivery .shadow-paragraph form .row-form  textarea
+     {
+        height:250px;
+     }
+
+   .valide-delivery .row-form button
+   {
+    width:200px;
+    height:30px;
+    padding: 9px;
+    align-items: center;
+    font-size: 17px;
+    font-family: "PT Sans";
+   }
+ 

@@ -1,0 +1,1106 @@
+{% block title %}{% endblock %}
+
+    {% block body %}
+        <html>
+        <head>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+          <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+        <style>
+        .main { margin: 0 auto; width:100%; font: 18px/1.5 sans-serif; }
+        .main { background: #F5F5F5; padding: 2px 6px; }
+        *{ 
+            font-family:'PT Sans', sans-serif;
+            --blue:#055488;
+            --white:#fff;
+            --grey:#f5f5f5;
+            --black1:#222;
+            --black2:#999;
+            --main-tranparent:rgba(91, 140, 81, 0.84);
+            --main:#5b8c51;
+         }
+    
+       body
+        {
+            margin:0;
+            padding:0;
+            background:var(--grey);
+            overflow-x: hidden;
+         }
+    
+        .main .contient 
+        {
+        width:100%;
+         padding:0;
+        margin:0;
+        }
+
+        .main .menu h1 {margin-left:10px;}
+
+    
+        .main .container-menu .headerbar
+        {
+          height:90px;
+          width:100%;
+          top:0;
+          color:black;
+          display:flex;
+          align-items:center;
+          background-color:white;
+          position:fixed;
+          z-index:-1;
+          padding:1rem;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+         }
+    
+        .main .container-menu .headerbar .user-admin
+        {
+           display:flex;
+           align-items:center;
+           justify-content:center;
+           position:fixed;
+           left:77%;
+           top:20px;
+           padding:1rem;
+           right:5%;
+          }
+    
+        .main .container-menu .headerbar .user-admin h4
+        {
+          font-size:14px;
+          font-weight:normal;
+          background:white
+        }
+        
+    
+        .main .container-menu .headerbar .user-admin .signUp
+        {
+          margin-left:1rem;
+        }
+    
+        .main .container-menu .headerbar .user-admin .signUp a
+        {
+          text-decoration:none;
+          color:black;
+          padding:6px;
+          font-size:13px;
+          border-radius:25px;
+          background:#D6DBDF
+        }
+    
+        
+    
+        .main .contient 
+        {
+          display:flex;
+          width:100%;
+          justify-content: space-between;
+        }
+
+        {# .main .contient .menu h2 {font-size:2.5rem; color:var(--main);font-weight: bold;} #}
+
+        .main .contient .menu { width:100%; height: 100%;}
+    
+
+        .main .contient .menu-bar 
+        {   
+          height:200vh;
+          width:20%;
+          animation:width .8s ease;
+          transition:.8s ease-out;
+          background-color:var(--main);
+          position:fixed;
+        }
+
+        .main .contient .menu-bar .icone {
+          display:flex;
+          align-items:center;
+          color:white;
+        }
+
+        .main .contient .menu-bar .icone:hover { background-color:transparent}
+
+
+         .main .contient .menu-bar.active
+         { 
+            width:10%;
+            animation:width .8s ease;
+            transition:.8s ease-out;
+         }
+         .logo { color:white; font-size:2rem;font-weight:bold;}
+
+         .logo.active 
+         {
+           display:none;
+         }
+
+         @keyframes width
+         {
+            0%{width:20%;}
+            100%{width:10%;}
+         }    
+      
+    
+        .main .contient .container-menu .page
+        {
+            width:100%;
+            height:auto;
+            position:absolute;
+            top:14%;
+            left:20%;
+            transition:.8s ease-out;
+            z-index:-2;
+            margin:0 1rem;
+           }
+    
+         .main .contient .container-menu .page.active
+         {
+           width:120%;
+           justify-content:center;
+           left:10%;
+           animation:width .8s ease;
+           transition:.8s ease-out;
+           z-index:-1;
+         }
+
+         @keyframes width
+         {
+            0%{width:100%;}
+            100%{width:120%;}
+         }
+         
+    
+         .page .menu .tableau .tableau-1,.tableau-2,.tableau-3
+         {
+           width:280px;
+           background:white;
+           border-radius:12px;
+           margin:13px;
+           padding:10px;
+           line-height: 0;
+           animation:tabslide .5s ease;
+         }
+    
+         @keyframes tabslide
+         {
+            0%{width:360px;}
+            100%{width:300px;}
+         }
+    
+         .page.active .menu .tableau .tableau-1 
+         {
+             width:330px;
+             animation:tableauSlide .5s ease;
+         }
+     
+          .page.active .menu .tableau .tableau-2 
+         {
+             width:330px;
+             animation:tableauSlide .5s ease;
+         }
+           .page.active .menu .tableau .tableau-3 
+         {
+             width:330px;
+             animation:tableauSlide .5s ease;
+         }
+    
+    
+    
+         @keyframes tableauSlide
+         {
+            0%{width:360px;}
+            100%{width:370px;}
+         }
+  
+    
+        .main .contient .menu-bar ul li 
+        {
+            list-style:none;
+            color:black;
+            padding:10px;
+            display:flex;
+            cursor: pointer;
+          }
+    
+          .main .contient .menu-bar ul li i
+          {
+            font-size:20px;
+            margin-right:1rem;
+            color:white
+          }
+    
+        .main .contient .menu-bar ul li:hover
+        {
+            background:#145A32;
+            border-top-left-radius:29px;
+            border-bottom-left-radius:29px;
+        }
+    
+        .main .contient .menu-bar ul li a
+        {
+         text-decoration:none;
+         color:white;
+         font-size:14px;
+        }
+    
+        .page .menu .tableau
+        {
+           display:flex;
+           width:auto;
+           align-items:center;
+           background:#ECF0F1
+        }
+    
+    
+         .page .menu .tableau span p
+         {
+             font-size:18px;
+            font-weight:800;
+         }
+    
+         .page .menu .tableau a 
+         {
+           margin:1rem;
+           font-size:14px;
+           text-decoration:none;
+           color:black;
+           align-items:center;
+           display: flex;
+         }
+    
+         .page .menu .tableau a:hover > i
+         {
+           padding:0 1rem;
+           animation:slow .5s ease;
+         }
+    
+         @keyframes slow
+         {
+            0%{padding:0 0;}
+            100%{padding:0 1rem;}
+         }
+    
+         .page .menu .tableau  .col 
+         {
+             font-size:25px;
+             font-family: 'Russo One', sans-serif;
+             text-align:center;
+             line-height:0;
+             align-items:center;   
+             margin: 0 auto;
+             padding:0;
+             color:#5D6D7E
+         }
+    
+         .page .menu .tableau  .col i 
+         {
+             font-size:40px;
+             font-family: 'Russo One', sans-serif;
+             text-align:center;
+             padding:0;
+             color:var(--main);
+         }
+         .page .menu .tableau  .col h6
+         {
+          font-weight:bold;
+          font-size:2rem;
+          color:black
+         }
+       
+    
+        .menu .range-table
+        {
+            height:60vh;
+            margin-left:10px;
+            background:white;
+            border-radius:12px;
+            padding:10px;
+         }
+    
+    
+         .menu .range-table .chartContainer h5 
+         {
+             font-size:17px;
+             font-weight:800;
+             color:#85929E 
+          }  
+    
+         .page .menu .range-table .chartContainer 
+        {
+            display:flex;
+            width: 100%;
+            height:240px;
+         }
+    
+        .menu .range-table .chartContainer  .chat1
+        {
+            width:350px;
+            height:60vh;
+            margin:10px;
+         } 
+    
+        .menu .range-table .chartContainer  .chat2
+        {
+            width:320px;
+            height:30vh;
+            margin:10px;
+    
+         }
+    
+         .menu .range-table .chartContainer .chat3
+        {
+            width:300px;
+            height:30vh;
+            margin:10px;
+    
+          }
+    
+         .menu .product-table
+         {   width:100%;
+             margin-top:1rem;
+             margin-left:10px;
+             border-radius:12px;
+             background:white;
+             padding:1rem;
+          }
+    
+         .menu table
+         {
+             width:80%;
+             font-size:15px;
+             color:black;
+             border-radius:10px;
+             box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+         }
+    
+         .menu table tr th 
+         {
+             padding:1rem;
+             font-size:14px;
+             color:black;
+             font-weight:900;
+            }
+
+          .menu table tr td
+          {
+              padding:1rem;
+              font-size:12px;
+          }
+          .menu .action {display:flex; align-items:center}
+    
+          .menu table tr td a 
+        {
+          text-decoration:none;
+          font-size:13px;
+          padding:5px;
+          border-radius:25px;
+          background-color:#D5D8DC
+        }
+
+        .menu #cancel {color:red;}
+
+        .menu #valider {color:green; margin-left:10px;}
+    
+        .container-menu .page .menu .product-table
+        .general-container
+        {
+          display:flex;
+           padding:10px;
+        }
+    
+        .container-menu .page .menu .product-table .saller-info
+        {
+          margin-left: 10px;
+        }
+    
+        .container-menu .page .menu .message
+        {
+          width: 100%;
+          height:100%;
+        }
+        .container-menu .page .menu .message h2
+        {
+          margin:1rem;
+          font-size:20px;
+          font-weight:800;
+          color:var(--main);
+        }
+    
+        .container-menu .page .menu .message .message-content
+        {
+          width:auto;
+          height:100vh;
+          padding:4px;
+          background:#D5D8DC;
+          margin:1rem;
+          padding:1rem;
+         }
+    
+         .container-menu .page .menu .message .message-content
+         .send 
+         {
+          width:450px;
+          height:auto;
+          border-top-left-radius:30px;
+          border-bottom-left-radius:30px;
+          border-bottom-right-radius:30px;
+          background:var(--main);
+          color:white;
+          margin-top:1rem;
+          font-size:15px;
+          padding: 1rem;
+         }
+    
+         .container-menu .page .menu .message .message-content
+         .received
+         {
+          width:450px;
+          height:auto;
+          left:43%;
+          border-top-right-radius:30px;
+          border-bottom-right-radius:30px;
+          border-bottom-left-radius:30px;
+          background:#F8F9F9;
+          color:black;
+          margin-top:1rem;
+          padding:1rem;
+          font-size:15px;
+          position:absolute;
+         }
+    
+          .container-menu .page .menu h1 {font-size:20px; }
+
+          .manage-product .addCategorie,.addCity  
+          {
+            height:100%;
+            margin:1rem;
+            border-radius:12px;
+            background:white;
+            padding:1rem;
+            display:flex;
+            flex-direction: column;
+            box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+          }
+
+
+   
+
+          .manage-product .addCategorie button { margin-top:12px;}          
+    
+         .container-menu .page .menu .manage-product
+         {
+          width:78%;
+          height:100%;
+          margin:1rem;
+          border-radius:12px;
+          background:white;
+          padding:1rem;
+          display:flex;
+          flex-direction: column;
+          }
+
+
+          .container-menu .page .menu label {
+            font-size:12px;
+            color:cadetblue;
+            font-weight:600;
+          }
+
+          .container-menu .page .menu button { background-color:var(--main); color:white; }
+
+          .container-menu .page .menu label,input[type="text"] {
+            margin-top:12px;
+          }
+
+          .ligne-add-product label,button { float:left;}
+
+          .container-menu .page .menu .manage-product  button { margin-top:12px;}
+
+  
+          .manage-product .ligne-add-product
+          {
+            width:100%;
+            height:auto;
+            border-radius:12px;
+            box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+            margin:1rem;
+            padding:1rem;
+            font-size:15px;
+          }
+
+          .manage-product .add-product  {box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; padding:12px;margin:1rem;border-radius:15px }
+
+          .menu .containers { width:78%;;display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;}
+
+          .menu .card {width:auto; height:auto;background-color:white; border: px solid #055488; border-radius:10px; margin:1rem; padding:1rem; box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; }
+          
+          .menu .card h4 {font-size:15px;color:var(--main); font-weight:800;}
+      
+          .menu .card p {font-size:14px;}
+
+          .main .card .date { padding:5px;margin:0;background-color:rgba(91, 140, 81, 0.32);color:black;font-weight:700;border-radius:15px; text-align: center;}
+       
+          .main .card .voir {text-decoration:none;color:var(--main);font-size:14px;margin-top:10px;}	
+         
+          .stock {display:flex;align-items:center; font-size:13px;}
+
+          .stock span { margin-left:10px;}
+
+          .menu .add-categorie {width:70%;height:100%;}
+
+
+          .nav-success-notification { position: fixed; top: 0; right: 0; width: 100%; align-items: center; z-index: 100;text-align: center; }
+
+          </style>
+        </head>
+    </html>
+    <body>
+    
+    <div class="main">
+        <div class="contient">
+            <div class="menu-bar">
+                 <ul>
+                    <li class="icone"><i class="fi fi-rr-menu-burger"></i></a><span class="logo">LaGraine</span></li>
+                    <li><i class="fi fi-rr-envelope-open"></i><a>Message</a></li>
+                    <li><i class="fi fi-rr-folder"></i><a>Gestionnaire</a></li>
+                    <li><i class="fi fi-rr-sack-dollar"></i><a>Commandes</a></li>
+                    <li><i class="fi fi-rr-edit-alt"></i><a>Rediger un article</a></li>
+                    <li><i class="fi fi-rr-user-time"></i><a>Gestion des clients</a></li>
+                    <li><i class="fi fi-rr-house-flood"></i><a>Gestion de Magasins</a></li>
+                    <li><i class="fi fi-rr-chart-histogram"></i><a>Categorie</a></li>
+                    <li><i class="fi fi-rr-exit"></i><a>Déconnexion</a></li>
+                </ul>
+            </div>
+    
+            <div class="container-menu"> 
+
+            {% for message in app.flashes('category') %}
+              <div class="nav-success-notification">
+                <div class="alert alert-success">
+                  {{ message }}
+              </div>
+            </div>
+          {% endfor %}
+
+          {% for message in app.flashes('product') %}
+            <div class="nav-success-notification">
+              <div class="alert alert-success">
+                {{ message }}
+            </div>
+          </div>
+        {% endfor %}
+
+        {% for message in app.flashes('city') %}
+          <div class="nav-success-notification">
+            <div class="alert alert-success">
+              {{ message }}
+          </div>
+        </div>
+      {% endfor %}
+
+      {% for message in app.flashes('shop') %}
+        <div class="nav-success-notification">
+          <div class="alert alert-success">
+            {{ message }}
+        </div>
+      </div>
+    {% endfor %}
+             
+              <div class="headerbar">
+                        <div class="user-admin">
+                          <i class="fi fi-rr-user"></i>
+                          {% if app.user %}
+                          <h4>{{app.user.email}}</h4>
+                          {% else %}{% endif %}
+                          <div class="signUp">
+                            <a href="{{ path('app_logout') }}">Déconnecter</a>
+                          </div>
+                        </div>
+                       </div>
+                <div class="page">
+
+                
+                    <div class="menu">
+                      
+                        <div class="tableau">
+    
+                            <div class="tableau-1">
+                                <div class="col">
+                                    <span><p>Produits en ligne</p></span>
+                                    <i class="fi fi-rr-badge-check"></i>  
+                                    <h6>100</h6>
+                                </div>
+                                <a href=""><i class="fi fi-rr-arrow-small-right"></i><span>voir plus...</span></a>    
+                            </div>
+                            <div class="tableau-2">
+                                <div class="col">
+                                    <span><p>Produit demandé</p></span>
+                                    <i class="fi fi-rr-hand-holding-seeding"></i> 
+                                    <h6>230</h6>
+                                </div>
+                                <a href=""><i class="fi fi-rr-arrow-small-right"></i><span>voir plus...</span></a>    
+     
+                            </div>
+                            <div class="tableau-3">
+                                <div class="col">
+                                    <span><p>Point de vente</p></span>
+                                    <i class="fi fi-rr-bank"></i>
+                                    <h6>20</h6>
+                                </div>
+                                <a href=""><i class="fi fi-rr-arrow-small-right"></i><span>voir plus...</span></a>    
+                            </div>
+                            
+                        </div>
+    
+                        <div class="range-table">
+                            <h3>Données du marché agricole</h3>
+    
+                            <div class="chartContainer">
+                                <div class="chat1">
+                                  <h5>Répartition des ventes mensuelles</h5>
+                                    <canvas id="barChart" width="450px" height="280px">
+                                   
+                                    </canvas>
+                                </div>
+                                
+                             <div class="chat2">
+                              <h5>Période de vente  </h5>
+                                <canvas id="lineChart" width="450px" height="300px">
+                               
+                               </canvas>
+                            </div>
+    
+                            <div class="chat3">
+                              <h5>Principaux points de vente</h5>
+                              <canvas id="donutChart" width="450px" height="300px">
+                             
+                             </canvas>
+                          </div>
+    
+                            <div class="chat3">
+                             
+                          </div>
+    
+                          </div>
+    
+                        </div>
+    
+                        <div class="product-table">
+                          <div class="general-container">
+                            <div class="product-info">
+                              <h3>Information sur les produits</h3>
+                              <table>
+                                <tr>
+                                    <th>Produit</th>
+                                    <th>Quantité</th>
+                                    <th>Producteur</th>
+                                    <th>Ville</th>
+                                    <th>Prix</th>
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr>
+                                    <td>Haricot blanc</td>
+                                    <td>10</td>
+                                    <td>Eric</td>
+                                    <td>Paris</td>
+                                    <td>1000</td>
+                                    <td>01-11-2024</td>
+                                    <td><a href="">Editer</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Césame</td>
+                                    <td>20</td>
+                                    <td>Michel</td>
+                                    <td>Bordeaux</td>
+                                    <td>2000</td>
+                                    <td>14-03-2024</td>
+                                    <td><a href="">Editer</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Coton</td>
+                                    <td>30</td>
+                                    <td>Julien</td>
+                                    <td>Lyon</td>
+                                    <td>3000</td>
+                                    <td>11-01-2024</td>
+                                    <td><a href="">Editer</a></td>
+                                </tr>
+                              </table>
+                            </div>
+                            <div class="saller-info">
+                              <h3>Informations du vendeur</h3>
+                              <table>
+                                <tr>
+                                    <th>Producteur</th>
+                                    <th>Produit</th>
+                                    <th>Ville</th>
+                                    <th>Phone</th>
+                                  </tr>
+                                <tr>
+                                    <td>Julien</td>
+                                    <td>Haricot</td>
+                                    <td>N'djamena</td>
+                                    <td>06 00 00 00</td>
+                                  </tr>
+                                <tr>
+                                    <td>Julien</td>
+                                    <td>Arachide</td>
+                                    <td>Moundou</td>
+                                    <td>06 00 00 00</td>
+                                  </tr>
+                                <tr>
+                                    <td>Julien</td>
+                                    <td>Sorgho</td>
+                                    <td>Kelo</td>
+                                    <td>06 00 00 00</td>
+                                  </tr>
+      
+                              </table>
+                            </div>
+                          </div>
+                         
+                          
+                        </div>
+    
+                      
+                       
+                    </div>
+    
+                    <div class="menu">
+                      <h1>Message de nos utilisateurs</h1>
+                        <div class="message">
+                          <div class="message-content">
+                             <div class="send">
+                              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam inventore exercitationem laborum veniam quidem est ducimus itaque ad animi quibusdam hic 
+                                autem, deleniti eos natus qui sunt libero perferendis labore.</p>
+                             </div>
+    
+                             <div class="send">
+                              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam inventore exercitationem laborum veniam quidem est ducimus itaque ad animi quibusdam hic 
+                                </p>
+                             </div>
+    
+                             <div class="received">
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eaque neque doloremque? Officiis earum corrupti molestiae. Architecto vitae,
+                                 ratione optio ipsum dolore ipsa impedit magnam rerum nobis autem iusto sed!</p>
+                             </div>
+    
+                             
+                          </div>
+                        </div>
+                    </div>
+    
+                    <div class="menu">
+                        <h1>Gestion des produits</h1>  
+                      <div class="manage-product">
+
+                        <div class="addCategorie">
+                          <h1>Ajouter une nouvelle catégorie</h1>
+                          {% include "admin/categorie.html.twig" %}
+                        </div>
+
+
+                        <div class="addCity">
+                          <h1>Ajouter une nouvelle ville</h1>
+                          {% include "admin/city.html.twig" %}
+                        </div>
+                        
+                        <div class="ligne-add-product">
+                          <h1>Ajouter un nouveau magasin</h1>
+                          {% include "admin/magasin.html.twig" %}
+                        </div>
+
+                        <div class="add-product">
+                          <h1>Ajouter un produit</h1>
+                          {% include "admin/produit.html.twig" %}
+                        </div>
+
+                      </div>
+                    </div>
+    
+                    <div class="menu">
+                      <h2>Vos commandes</h2>
+                      <div class="orders-page">
+                        <table>
+                          <tr>
+                            <th>Produit</th>
+                            <th>Client</th>
+                            <th>Quantite</th>
+                            <th>Date</th>
+                            <th>Ville</th>
+                            <th>Etat</th>
+                            <th>Action</th>
+                          </tr>
+                          <tr>
+                            <td>Arachide</td>
+                            <td>+235 66 25 45 33</td>
+                            <td>2</td>
+                            <td>12/12/2022</td>
+                            <td>Moundou</td>
+                            <td>En cours</td>
+                            <td class="action"><a href="#" id="cancel">Annuler</a><a href="#" id="valider">Valider</a></td>
+                          </tr>
+                          <tr>
+                            <td>Arachide</td>
+                            <td>+235 66 25 45 33</td>
+                            <td>2</td>
+                            <td>12/12/2022</td>
+                            <td>Ndjamena</td>
+                            <td>En cours</td>
+                            <td class="action"><a href="#" id="cancel">Annuler</a><a href="#" id="valider">Valider</a></td>
+                          </tr>
+                          <tr>
+                            <td>Arachide</td>
+                            <td>+235 66 25 45 33</td>
+                            <td>2</td>
+                            <td>12/12/2022</td>
+                            <td>Doba</td>
+                            <td>En cours</td>
+                            <td class="action"><a href="#" id="cancel">Annuler</a><a href="#" id="valider">Valider</a></td>
+                           </tr>
+                        </table>
+                      </div>
+                    </div>
+    
+                    <div class="menu">
+                       
+                    </div>
+    
+                    <div class="menu">
+                      <h1>Les clients</h1>
+                      <div class="containers">
+
+                        <div class="card">
+                          <div class="client-info">
+                              <img src="{{asset('icones/user.png')}}" alt="">
+                              <div class="infor-detail">
+                                <h4><span>John Doe</span></h4>
+                                <p>+235 66 25 45 33</p>
+                                <p><span>Tchad</span><span>/ Moundou</span></p>
+                                <p class="date">12/12/2022</p>
+                              </div>
+                          </div>
+                      </div>
+                     
+                      </div>
+                      
+                    </div>
+    
+                    <div class="menu">
+                        <h2>Les magasins partenaires</h2>   
+                    <div class="containers">
+
+                    <div class="card">
+                      <div class="client-info">
+                          <img src="{{asset('icones/user.png')}}" alt="">
+                          <div class="infor-detail">
+                            <h4><span>Magasin la grâce</span></h4>
+                            <p>+235 66 25 45 33</p>
+                            <p><span>Tchad</span><span>/ Moundou</span></p>
+                            <div class="stock"><i class="fi fi-rr-truck-loading"></i><span>Stockage</span>: 200 tonne</div>
+                            <div class="voir"><a href="#" class="voir">voir plus</a></div>
+                            
+                          </div>
+                      </div>
+                  </div>
+
+
+                  <div class="card">
+                      <div class="client-info">
+                          <img src="{{asset('icones/user.png')}}" alt="">
+                          <div class="infor-detail">
+                            <h4><span>Massive stock</span></h4>
+                            <p>+235 65 33 24 54</p>
+                            <p><span>Tchad</span><span>/ Ndjamena</span></p>
+                            <div class="stock"><i class="fi fi-rr-truck-loading"></i><span>Stockage</span>: 50 kg</div>
+                            <div class="voir"><a href="#" class="voir">voir plus</a></div>
+                            
+                          </div>
+                      </div>
+                  </div>
+
+
+
+                 
+                  </div>
+                    </div>
+    
+                    <div class="menu">Page 8</div>
+                </div> 
+    
+            </div>
+        </div>
+    </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script>
+        let container = document.querySelectorAll('.page .menu');
+        let menu = document.querySelectorAll('.menu-bar ul li');
+        let itemMenu = document.querySelectorAll('.menu-bar ul li a');
+        let menuClique = document.querySelector('.icone');
+        let menuSidePanel = document.querySelector('.menu-bar');
+        let maincontainer = document.querySelector('.container-menu .page');
+        let headadmin = document.querySelector('.user-admin');
+        let logo = document.querySelector('.logo');
+     
+        menuClique.addEventListener('click', () => {
+            menuSidePanel.classList.toggle('active');
+            maincontainer.classList.toggle('active');
+            logo.classList.toggle('active');
+            
+            if(menuSidePanel.classList.contains('active'))
+            {
+               headadmin.classList.toggle('active');
+                 itemMenu.forEach((item, index) => {
+                    item.style.display = 'none';
+                 });
+              }else
+            {
+               itemMenu.forEach((item, index) => {
+                    item.style.display = 'block';
+                 });
+                  menuClique.style.marginLeft = '10px';
+            }
+         })
+    
+        container.forEach((item, index) => {
+            if(index == 0)
+            {
+                item.style.display = 'block';
+             }else
+            {
+                item.style.display = 'none';
+            }
+        })
+    
+        menu.forEach((data1, index1) => {
+            data1.addEventListener('click', () => {
+                container.forEach((data2, index2) => {
+                if(index1 == index2)
+                {
+                    data2.style.display = 'block';
+                }
+                else
+                {
+                    data2.style.display = 'none';
+                }
+                })
+             })
+        })
+      </script>
+     
+      <script>
+      const ctx = document.getElementById('barChart');
+    
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+          datasets: [{
+            label: 'Volume de vente',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: 'rgba(91, 140, 81, 0.63)',
+            borderWidth: 1
+          },
+          {
+            label: 'Production partielle',
+             data: [10, 9, 12, 5, 11, 3],
+             backgroundColor: '#5b8c51',
+           },
+           {
+            label: 'Production totale',
+             data: [15, 19, 3, 5, 2, 3],
+             backgroundColor: 'rgba(91, 140, 81, 0.36)',
+           }
+          ]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+    
+    <script>
+       var line = document.getElementById('lineChart');   
+    new Chart(line, {
+        type: 'line',
+        data:{
+          labels:['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+          datasets: [
+            {
+            label: 'Période de vente',
+            data: [12,10,30,6,22,11],
+            fill: true,
+            backgroundColor: 'rgba(17, 187, 173, 0.33)',
+            borderColor: 'rgb(12, 196, 26 ,0.63)',
+            pointBorderWidth: 2.6,
+            pointHoverRadius: 5,
+            pointRadius: 1.6,
+            pointHitRadius: 10,
+            tension: 0.4,
+            pointBackgroundColor:'rgb(38,185,154,0.7)',
+            pointHoverBackgroundColor: '#000',
+          },
+          {
+            label: 'Le consommateur',
+            data: [1, 30, 12,25,12,25],
+            backgroundColor: 'rgba(75, 181, 207, 0.33)',
+            fill: true,
+            borderColor: 'rgb(75, 192, 192)',
+            pointBorderWidth: 2.6,
+            pointRadius: 1.6,
+            pointHitRadius: 10,
+            tension: 0.4,
+            pointHoverBackgroundColor: '#000',
+          }
+         ]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+    <script>
+      let donutChart = document.getElementById('donutChart');
+      const data = {
+      labels: [
+        'Moundou',
+        'N\'djamena',
+        'Sarh'
+      ],
+      datasets: [{
+        label: 'Répartition des points de vente',
+        data: [300, 50, 100],
+        backgroundColor: [
+          'rgb(199,79,15)',
+          'rgb(199,185,15)',
+          'rgb(199,129,15)'
+        ],
+        hoverOffset: 4
+      }]
+    };
+    new Chart(donutChart, {
+      type: 'doughnut',
+      data: data,
+      options: {
+        plugins: {
+          legend: {
+            display: true
+          }
+        }
+      }
+    })
+    </script>
+     
+    {% endblock %}
+    

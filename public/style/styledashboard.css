@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,900;1,900&family=Staatliches&family=Ubuntu:wght@300;400;500;700&display=swap');
+*{
+margin:0;
+padding: 0;
+box-sizing: border-border-box;
+}
+
+:root{
+  --green:#0830613b;
+  --white:#fff;
+  --black1:#222;
+  --black2:rgb(222, 222, 222);
+  --black2:#999;
+  --blue:#074580;
+  --grey:#566573;
+  --blue:#273746;
+  --brown:#E74C3C;
+  --main:#009688FF;
+}
+
+
+
+body{
+  min-height: 200vh;
+  overflow-x: hidden;
+  background:#bccee437;
+}
+
+.container{
+  position: relative;
+  width: 97%;
+}
+
+
+.navigation ul li:hover a::before, 
+.navigation ul li.hovered a::before{
+  content:''; 
+  position: absolute; 
+  right: 25px;
+  top: -75; 
+  width: 50px;
+  height: 50px;
+  background:transparent;
+  border-radius: 60%;
+  box-shadow: 35px 30px 0 10px var(--white);
+  pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
+content:'';
+position: absolute;
+right: 25px;
+bottom: -65px;
+width: 55px;
+height: 50px;
+background:transparent;
+border-radius: 60%;
+box-shadow: 35px -30px 0 10px var(--white);
+pointer-events: none;
+}
+    
+
+
+
+.navigation ul{
+position: absolute;
+top: 0;left: 0;bottom: 0;
+width: 100%
+}
+
+.navigation ul li a .icon{
+  position: relative;
+  display: block;
+  min-width: 40px;
+  line-height: 60px;
+  padding-right: 15px;
+  font-size: 12px;
+ }
+ .navigation ul li {
+  position: relative;
+  padding: 20px;
+  width: 150%;
+  height: 8px;
+  list-style: none;
+  text-align: center;
+  border-top-left-radius:40px;
+  border-bottom-left-radius:40px;
+   }
+ .navigation.actived{
+  width: 70px;
+}
+
+.navigation ul li a #logo-brand{
+font-size: 20px;
+}
+
+
+.navigation ul li:hover,
+.navigation ul li.hovered{
+  background:var(--white);
+}
+
+.navigation ul li:nth-child(1)
+ {
+  margin-bottom: 30px;
+  pointer-events: none;
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a{
+  color:#000;
+}
+
+ .main{
+   position: absolute;
+   width: calc(100% - 150px);
+   left: 250px;
+    transition: 0.5s;
+ }
+.main.actived{
+  width: calc(100% - 300px);
+  left: 75px;
+}
+ .topbar{
+   width: 80%;
+   height: 100px;
+   display: flex;
+   justify-content: space-between;
+   align-items:center;
+   padding: 0 10px;
+ }
+
+ .toggle
+ {
+  position: relative;
+  width: 80px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items:Center;
+  font-size: 17px;
+  cursor: pointer;
+ }
+
+
+.search{
+  position: relative ;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.search label{
+  position: relative;
+  width: 100%;
+}
+
+.search label input{
+  width: 500px;
+  height: 30px;
+  border-radius:50px;
+  padding: 5px 40px;
+  outline: none;
+  border:1px solid var(--black2);
+ }
+  
+ 
+.search label i{
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 13px;
+  color:rgb(121, 121, 121);
+}
+
+.container .row
+{
+  margin: 100px;
+  padding: 100px
+}
+
+/*Le design responsive du site*/
+@media (max-width: 991px)
+{
+  .nabigation
+  {
+    left: -300px;
+  }
+  
+  .navigation.actived
+  {
+    width:300px;
+    left: 0;
+  }
+
+  .margin
+  {
+    width:100px;
+    left: 0;
+  }
+
+  main.actived
+  {
+    left: 300px;
+  }
+
+  .cardBox
+  {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:768px)
+{
+  .details
+  {
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  .recentCustomers
+  {
+    overflow-x:auto;
+  }
+  .status.inprogress
+  {
+    white-space: nowrap;
+  }
+}
+
+
+@media(max-width:468px) {
+  .cardBox
+  {
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  .cardHeader
+  {
+    font-size: 20px;
+  }
+  .recentCustomers
+  {
+    min-width:40px;
+  }
+
+
+  .navigation
+  {
+    width: 100%;
+    height: -100%;
+    z-index:1000;
+  }
+
+  .navigation.actived
+  {
+    width: 100%;
+    left:0;
+  }
+
+  .toggle
+  {
+    z-index: 10001;
+  }
+
+  .main.actived.toggle
+  {
+    color: var(--white);
+    right:0;
+    left: initial;
+    position: fixed;
+
+  }
+}

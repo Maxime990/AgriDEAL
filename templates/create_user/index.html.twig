@@ -1,0 +1,163 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un Compte!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 1000px; width: 100%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+    .form-group .row .col-md-4   { border-radius:5px; border: 1px 1px solid rgb(97, 97, 97); width:70% }
+
+     
+    .form-group { margin: 0 auto; padding: 10px; position: relative; width:80% }
+
+    .form-group .row {  background:#75757515; }
+     
+   .form-group .row  
+    {
+      border: 1px 1px solid rgb(97, 97, 97);
+      padding: 12px;
+      border-radius:5px;
+     }
+
+      .form-group button
+      {
+        background: var(--main);
+        border:none;
+        width: 400px;
+      }
+
+    .form-group .row .col-md-8 label
+    {
+        font-size: 11px;
+    }
+
+
+
+    .form-group .row .col-md-4 label
+    {
+        font-size: 11px;
+    }
+
+    
+    .form-group .row .col-md-12  h3
+    {
+      font-size:22px;
+      font-weight:bold;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .form-group .row .col-md-4 .row 
+    {
+      background:white;
+      margin:2px;
+    }
+    .form-group .row .col-md-12 label
+    {
+      font-weight: normal;
+      font-size: 14px;
+      color:black;
+    }
+
+    .form-group .row .col-md-8 #form_pays
+    {
+      width:90%;
+    }
+
+    .form-group .row .col-md-8 #form_userstatus
+    {
+      width:90%;
+    }
+
+
+    .form-group .row .col-md-12 button
+    {
+      width:90%;
+    }
+
+    .form-group .row .col-md-12 button:hover
+    {
+      background:var(--main)
+    }
+
+
+    .section-login
+    {
+     background: var(--main);
+    }
+
+    
+</style>
+<section class="section-login">
+ 
+</section>
+
+<section class="section-register">
+
+<form method="post">
+{{ form_start(formulaireUser) }}
+<div class="form-group">
+<div class="row">
+<div class="col-md-12">
+  <h3>Inscrivez-vous sur notre LaGraine et bénéficiez des services</h3>
+
+  <div class="row">
+    <div class="col-xs-6">
+    {{form_label(formulaireUser.nom, 'Nom *')}}
+    {{form_row(formulaireUser.nom, {'label':false}) }}
+    
+    {{form_label(formulaireUser.prenom, 'Prenom *')}}
+    {{form_row(formulaireUser.prenom, {'label':false}) }}
+    </div>
+
+    <div class="col-xs-6">
+     {{form_label(formulaireUser.email, 'Email *')}}
+    {{form_row(formulaireUser.email, {'label':false}) }}
+    
+    {{form_label(formulaireUser.phone, 'Téléphone *')}}
+    {{form_row(formulaireUser.phone, {'label':false}) }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+    {{form_label(formulaireUser.pays, 'Pays *')}}
+    {{form_row(formulaireUser.pays, {'label':false}) }}
+    
+    {{form_label(formulaireUser.ville, 'Ville *')}}
+    {{form_row(formulaireUser.ville, {'label':false}) }}
+    </div>
+    <div class="col-xs-6">
+      {{form_label(formulaireUser.favorisproduct,'Produit favoris')}}
+      {{form_widget(formulaireUser.favorisproduct,{'label': false})}} 
+
+      {{ form_label(formulaireUser.entreprise,'Statut de votre entreprise *') }}
+      {{ form_widget(formulaireUser.entreprise, {'label': false}) }}
+      </div>
+   
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      {{form_label(formulaireUser.password, 'Mot de passe *')}}
+      {{form_row(formulaireUser.password, {'label':false}) }}
+      {{form_label(formulaireUser.confirmPassword, 'Confirmer mot de passe *')}}
+      {{form_row(formulaireUser.confirmPassword, {'label':false}) }}
+    </div>
+        <div class="col-xs-6">
+          {{form_label(formulaireUser.userstatus, 'Status utilisateur *')}}
+          {{form_row(formulaireUser.userstatus, {'label':false}) }}
+          
+          {{ form_label(formulaireUser.soumettre, 'soumettre') }}
+          {{ form_widget(formulaireUser.soumettre, { 'label': 'Soumettre'}) }}
+        </div>
+    </div>
+  </div>
+ </div>
+</div>
+  {{ form_end(formulaireUser) }}
+ </form>
+</section>
+
+{% endblock %}
